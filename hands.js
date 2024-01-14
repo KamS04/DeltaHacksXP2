@@ -5,491 +5,18 @@ function calcWAspect(w0, h0, w1, h1) {
     const hwar = w1 * how;
     const whar = h1 * woh;
 
-    console.log(woh, how, w0, h0, w1, h1, whar, hwar);
-    
+    console.log(`Original ${w0} x ${h0}, Want ${w1} x ${h1}`)
+
     if (hwar > h1) {
-        console.log( [whar, h1] );
-        return [ whar, h1 ]
+        return [whar, h1]
     } else {
-        console.log( [w1,hwar] );
-        return [ w1, hwar ];
+        return [w1, hwar];
     }
 }
 
-let extras = {
-    "image": {},
-    "multiHandLandmarks": [
-      [
-        {
-          "x": 0.2694644331932068,
-          "y": 0.7550435066223145,
-          "z": 3.7148853948565375e-7
-        },
-        {
-          "x": 0.32064446806907654,
-          "y": 0.7239559292793274,
-          "z": -0.020104311406612396
-        },
-        {
-          "x": 0.35842418670654297,
-          "y": 0.6599426865577698,
-          "z": -0.026949433609843254
-        },
-        {
-          "x": 0.3849036693572998,
-          "y": 0.6090511083602905,
-          "z": -0.03255312144756317
-        },
-        {
-          "x": 0.4143919348716736,
-          "y": 0.5891000032424927,
-          "z": -0.03851889446377754
-        },
-        {
-          "x": 0.318936824798584,
-          "y": 0.5817853808403015,
-          "z": -0.01908702589571476
-        },
-        {
-          "x": 0.3407417833805084,
-          "y": 0.5180716514587402,
-          "z": -0.03220828250050545
-        },
-        {
-          "x": 0.35208582878112793,
-          "y": 0.47474509477615356,
-          "z": -0.042863909155130386
-        },
-        {
-          "x": 0.359497606754303,
-          "y": 0.43715131282806396,
-          "z": -0.0516229085624218
-        },
-        {
-          "x": 0.28151604533195496,
-          "y": 0.57315993309021,
-          "z": -0.020190522074699402
-        },
-        {
-          "x": 0.2803044021129608,
-          "y": 0.49752604961395264,
-          "z": -0.03263933211565018
-        },
-        {
-          "x": 0.2804567217826843,
-          "y": 0.4509364366531372,
-          "z": -0.04234664887189865
-        },
-        {
-          "x": 0.2783487141132355,
-          "y": 0.41157281398773193,
-          "z": -0.049726273864507675
-        },
-        {
-          "x": 0.24849411845207214,
-          "y": 0.5830849409103394,
-          "z": -0.02382861077785492
-        },
-        {
-          "x": 0.23125292360782623,
-          "y": 0.5151304006576538,
-          "z": -0.03844992816448212
-        },
-        {
-          "x": 0.22077631950378418,
-          "y": 0.47007250785827637,
-          "z": -0.04948488622903824
-        },
-        {
-          "x": 0.21215176582336426,
-          "y": 0.4304072856903076,
-          "z": -0.05700244754552841
-        },
-        {
-          "x": 0.21938952803611755,
-          "y": 0.6088434457778931,
-          "z": -0.029449541121721268
-        },
-        {
-          "x": 0.18901394307613373,
-          "y": 0.5598472952842712,
-          "z": -0.04524332284927368
-        },
-        {
-          "x": 0.1702183187007904,
-          "y": 0.5264221429824829,
-          "z": -0.053967829793691635
-        },
-        {
-          "x": 0.155103400349617,
-          "y": 0.4918135106563568,
-          "z": -0.05941634252667427
-        }
-      ],
-      [
-        {
-          "x": 0.7146937847137451,
-          "y": 0.6962167024612427,
-          "z": 2.838775969848939e-7
-        },
-        {
-          "x": 0.6625295877456665,
-          "y": 0.6799375414848328,
-          "z": -0.015540584921836853
-        },
-        {
-          "x": 0.6150654554367065,
-          "y": 0.635489821434021,
-          "z": -0.021633589640259743
-        },
-        {
-          "x": 0.5840212106704712,
-          "y": 0.5943921804428101,
-          "z": -0.026905063539743423
-        },
-        {
-          "x": 0.559683620929718,
-          "y": 0.5620869994163513,
-          "z": -0.032245002686977386
-        },
-        {
-          "x": 0.6393410563468933,
-          "y": 0.5433161854743958,
-          "z": -0.01358945481479168
-        },
-        {
-          "x": 0.605495274066925,
-          "y": 0.4857338070869446,
-          "z": -0.0263573806732893
-        },
-        {
-          "x": 0.5855275988578796,
-          "y": 0.44884559512138367,
-          "z": -0.036729179322719574
-        },
-        {
-          "x": 0.5710226893424988,
-          "y": 0.41599196195602417,
-          "z": -0.04484177380800247
-        },
-        {
-          "x": 0.6712092757225037,
-          "y": 0.5227823853492737,
-          "z": -0.018056515604257584
-        },
-        {
-          "x": 0.6549418568611145,
-          "y": 0.44635817408561707,
-          "z": -0.028958886861801147
-        },
-        {
-          "x": 0.6465552449226379,
-          "y": 0.3969728648662567,
-          "z": -0.04004952311515808
-        },
-        {
-          "x": 0.6398957371711731,
-          "y": 0.3564129173755646,
-          "z": -0.04857288673520088
-        },
-        {
-          "x": 0.7039421200752258,
-          "y": 0.5224175453186035,
-          "z": -0.025176431983709335
-        },
-        {
-          "x": 0.7090252041816711,
-          "y": 0.45045459270477295,
-          "z": -0.042445648461580276
-        },
-        {
-          "x": 0.7129583954811096,
-          "y": 0.3998289108276367,
-          "z": -0.05730162560939789
-        },
-        {
-          "x": 0.7149516940116882,
-          "y": 0.3559821546077728,
-          "z": -0.067262664437294
-        },
-        {
-          "x": 0.7358061671257019,
-          "y": 0.5386966466903687,
-          "z": -0.03311787545681
-        },
-        {
-          "x": 0.7601041793823242,
-          "y": 0.4825502038002014,
-          "z": -0.05209861323237419
-        },
-        {
-          "x": 0.7783209681510925,
-          "y": 0.4448515474796295,
-          "z": -0.06233349069952965
-        },
-        {
-          "x": 0.792527437210083,
-          "y": 0.4113367199897766,
-          "z": -0.06866610795259476
-        }
-      ]
-    ],
-    "multiHandWorldLandmarks": [
-      [
-        {
-          "x": -0.006757086608558893,
-          "y": 0.08708615601062775,
-          "z": 0.006420135498046875
-        },
-        {
-          "x": 0.024992678314447403,
-          "y": 0.06448018550872803,
-          "z": -0.00847625732421875
-        },
-        {
-          "x": 0.047842469066381454,
-          "y": 0.04107346758246422,
-          "z": -0.01080322265625
-        },
-        {
-          "x": 0.06604748964309692,
-          "y": 0.015142297372221947,
-          "z": -0.0156097412109375
-        },
-        {
-          "x": 0.08074118942022324,
-          "y": -0.0044557275250554085,
-          "z": -0.00951385498046875
-        },
-        {
-          "x": 0.027841441333293915,
-          "y": -0.00123899569734931,
-          "z": 0.0027332305908203125
-        },
-        {
-          "x": 0.03909095376729965,
-          "y": -0.027169741690158844,
-          "z": -0.0067596435546875
-        },
-        {
-          "x": 0.04651234298944473,
-          "y": -0.04631133750081062,
-          "z": -0.0157623291015625
-        },
-        {
-          "x": 0.05195360630750656,
-          "y": -0.05706696957349777,
-          "z": -0.04461669921875
-        },
-        {
-          "x": 0.002158643677830696,
-          "y": -0.0049955775029957294,
-          "z": 0.005664825439453125
-        },
-        {
-          "x": 0.002394868526607752,
-          "y": -0.041762493550777435,
-          "z": -0.006282806396484375
-        },
-        {
-          "x": 0.0015684599056839943,
-          "y": -0.058321621268987656,
-          "z": -0.0271148681640625
-        },
-        {
-          "x": 0.0029755537398159504,
-          "y": -0.07811157405376434,
-          "z": -0.046417236328125
-        },
-        {
-          "x": -0.02076735720038414,
-          "y": -0.0005901699187234044,
-          "z": -0.001239776611328125
-        },
-        {
-          "x": -0.027677517384290695,
-          "y": -0.029530731961131096,
-          "z": -0.0136566162109375
-        },
-        {
-          "x": -0.030716154724359512,
-          "y": -0.04820394888520241,
-          "z": -0.029205322265625
-        },
-        {
-          "x": -0.033155836164951324,
-          "y": -0.06604193896055222,
-          "z": -0.048187255859375
-        },
-        {
-          "x": -0.03848055750131607,
-          "y": 0.013574161566793919,
-          "z": -0.007038116455078125
-        },
-        {
-          "x": -0.050185300409793854,
-          "y": -0.005838542245328426,
-          "z": -0.0088653564453125
-        },
-        {
-          "x": -0.06187340244650841,
-          "y": -0.024073906242847443,
-          "z": -0.01471710205078125
-        },
-        {
-          "x": -0.0650516226887703,
-          "y": -0.03983348235487938,
-          "z": -0.027862548828125
-        }
-      ],
-      [
-        {
-          "x": 0.02264794334769249,
-          "y": 0.08376060426235199,
-          "z": 0.0059814453125
-        },
-        {
-          "x": -0.010810591280460358,
-          "y": 0.06921302527189255,
-          "z": -0.0029277801513671875
-        },
-        {
-          "x": -0.03615495562553406,
-          "y": 0.052968233823776245,
-          "z": -0.0087127685546875
-        },
-        {
-          "x": -0.06207363307476044,
-          "y": 0.03053266741335392,
-          "z": -0.01436614990234375
-        },
-        {
-          "x": -0.07989282160997391,
-          "y": 0.01000850461423397,
-          "z": -0.01751708984375
-        },
-        {
-          "x": -0.031057579442858696,
-          "y": 0.008531143888831139,
-          "z": 0.002956390380859375
-        },
-        {
-          "x": -0.045814864337444305,
-          "y": -0.019063454121351242,
-          "z": -0.00444793701171875
-        },
-        {
-          "x": -0.057693250477313995,
-          "y": -0.03302130848169327,
-          "z": -0.01476287841796875
-        },
-        {
-          "x": -0.0697564035654068,
-          "y": -0.042131632566452026,
-          "z": -0.04150390625
-        },
-        {
-          "x": -0.006378103047609329,
-          "y": -0.002454871777445078,
-          "z": 0.00605010986328125
-        },
-        {
-          "x": -0.0142544936388731,
-          "y": -0.04108503833413124,
-          "z": -0.00551605224609375
-        },
-        {
-          "x": -0.023931819945573807,
-          "y": -0.05810472369194031,
-          "z": -0.0271759033203125
-        },
-        {
-          "x": -0.034835007041692734,
-          "y": -0.07304886728525162,
-          "z": -0.049652099609375
-        },
-        {
-          "x": 0.020345838740468025,
-          "y": -0.006810683757066727,
-          "z": -0.0012788772583007812
-        },
-        {
-          "x": 0.019652877002954483,
-          "y": -0.03763369098305702,
-          "z": -0.0092926025390625
-        },
-        {
-          "x": 0.01720813661813736,
-          "y": -0.05799856036901474,
-          "z": -0.0274658203125
-        },
-        {
-          "x": 0.014277540147304535,
-          "y": -0.07400884479284286,
-          "z": -0.04913330078125
-        },
-        {
-          "x": 0.037982724606990814,
-          "y": 0.004567793570458889,
-          "z": -0.00833892822265625
-        },
-        {
-          "x": 0.04911821708083153,
-          "y": -0.018374500796198845,
-          "z": -0.00740814208984375
-        },
-        {
-          "x": 0.058698419481515884,
-          "y": -0.03669244423508644,
-          "z": -0.0168609619140625
-        },
-        {
-          "x": 0.06266313046216965,
-          "y": -0.04868294298648834,
-          "z": -0.0275726318359375
-        }
-      ]
-    ],
-    "multiHandedness": [
-      {
-        "index": 0,
-        "score": 0.9775390625,
-        "label": "Left"
-      },
-      {
-        "index": 1,
-        "score": 0.9259033203125,
-        "label": "Right"
-      }
-    ]
-  };
-
-
+window.exercise = null;
 
 let reportNext = false;
-
-function startCamera(cam) {
-    var a = cam, b;
-    return J(new I(new B(function(e) {
-        navigator.mediaDevices && navigator.mediaDevices.getUserMedia || alert("No navigator.mediaDevices.getUserMedia exists.");
-        b = a.h;
-        return e.return(navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: b.facingMode,
-                width: b.width,
-                height: b.height
-            }
-        }).then(function(f) {
-            O(a, f)
-        }).catch(function(f) {
-            var h = "Failed to acquire camera feed: " + f;
-            console.error(h);
-            alert(h);
-            throw f;
-        }))
-    }
-    )));
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const videoElement = document.getElementById('input-video');
@@ -506,42 +33,479 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (reportNext) {
             console.log(results);
-            reportNext = false;
+            // reportNext = false;
         }
 
         if (results.multiHandLandmarks) {
-            results.multiHandLandmarks.forEach( (landmarks,i) => {
+            results.multiHandLandmarks.forEach((landmarks, i) => {
                 drawConnectors(
                     canvasCtx, landmarks, HAND_CONNECTIONS,
-                    { color: results.multiHandedness[i].index == 0 ? '#00FF00' : '#a3a300', lineWidth: 5 }
+                    { color: results.multiHandedness[i].index == 12 ? '#00FF00' : '#a3a300', lineWidth: 5 }
                 );
                 drawLandmarks(
                     canvasCtx, landmarks,
                     { color: results.multiHandedness[i].index == 0 ? '#FF0000' : '00b5b5', lineWidth: 2 }
                 );
-                drawLandmarks(
-                    canvasCtx, [ landmarks[15] ],
-                    { color: '#ae1167', lineWidth: 5 }
-                );
             });
         }
-        // if (extras.multiHandLandmarks) {
-        //     extras.multiHandLandmarks.forEach( (landmarks,i) => {
-        //         drawConnectors(
-        //             canvasCtx, landmarks, HAND_CONNECTIONS,
-        //             { color: extras.multiHandedness[i].index == 0 ? '#00FF00' : '#a3a300', lineWidth: 5 }
-        //         );
-        //         drawLandmarks(
-        //             canvasCtx, landmarks,
-        //             { color: extras.multiHandedness[i].index == 0 ? '#FF0000' : '00b5b5', lineWidth: 2 }
-        //         );
-        //     });
-        // }
+        if (window.exercise !== null) {
+            window.exydata = window.exercise.onData(
+                window.exydata,
+                results,
+                canvasCtx,
+                () => {
+                    if (window.elapsedTime !== -1) {
+                        return;
+                    }
+
+                    window.elapsedTime = 0;
+                    window.lastDate = Date.now();
+                    document.querySelector('.timer').textContent = "0";
+                },
+                () => {
+                    if (window.elapsedTime === null) {
+                        return;
+                    }
+                    const nDate = Date.now();
+                    window.elapsedTime += Date.now() - window.lastDate;
+                    document.querySelector('.timer').textContent = Math.floor(window.elapsedTime / 1000).toString();
+                    if (window.elapsedTime >= 4000) {
+                        // TODO FINISH EXERCISE
+                        window.exercise = null;
+                        window.exercises = window.exercises.slice(1);
+                        window.loadExercises(window.exercises);
+                        window.elapsedTime = -1;
+                        document.querySelector('.timer').textContent = "";
+                    }
+                }
+            )
+            window.lastDate = Date.now();
+        }
         canvasCtx.restore();
     }
 
+    window.exercises = [
+        {
+            name: "Exercise 1 - 1",
+            setup: () => {
+                return { stT: false };
+            },
+            onData: (sData, results, canvas, startTimer, tickTimer) => {
+                const matchData = {
+                    "multiHandLandmarks": [
+                        [
+                            {
+                                "x": 0.3900805413722992,
+                                "y": 0.6468449831008911,
+                                "z": 3.0274867413027096e-7
+                            },
+                            {
+                                "x": 0.4443388283252716,
+                                "y": 0.6188702583312988,
+                                "z": -0.023054873570799828
+                            },
+                            {
+                                "x": 0.4804697334766388,
+                                "y": 0.5578715801239014,
+                                "z": -0.027290578931570053
+                            },
+                            {
+                                "x": 0.491191565990448,
+                                "y": 0.49413803219795227,
+                                "z": -0.029928604140877724
+                            },
+                            {
+                                "x": 0.48649415373802185,
+                                "y": 0.44447124004364014,
+                                "z": -0.03193499147891998
+                            },
+                            {
+                                "x": 0.45456618070602417,
+                                "y": 0.4600518047809601,
+                                "z": -0.0002268506068503484
+                            },
+                            {
+                                "x": 0.46292844414711,
+                                "y": 0.388904333114624,
+                                "z": -0.010542819276452065
+                            },
+                            {
+                                "x": 0.4646134376525879,
+                                "y": 0.34530413150787354,
+                                "z": -0.02285051718354225
+                            },
+                            {
+                                "x": 0.46553829312324524,
+                                "y": 0.3060254454612732,
+                                "z": -0.03226938843727112
+                            },
+                            {
+                                "x": 0.42462530732154846,
+                                "y": 0.44906097650527954,
+                                "z": 0.0015071125235408545
+                            },
+                            {
+                                "x": 0.43395617604255676,
+                                "y": 0.3689350485801697,
+                                "z": -0.006734400521963835
+                            },
+                            {
+                                "x": 0.4383533000946045,
+                                "y": 0.31755292415618896,
+                                "z": -0.01906067505478859
+                            },
+                            {
+                                "x": 0.4424627721309662,
+                                "y": 0.27544352412223816,
+                                "z": -0.028628168627619743
+                            },
+                            {
+                                "x": 0.3948420584201813,
+                                "y": 0.4524485170841217,
+                                "z": -0.001179100596345961
+                            },
+                            {
+                                "x": 0.4034399390220642,
+                                "y": 0.3764898180961609,
+                                "z": -0.011722502298653126
+                            },
+                            {
+                                "x": 0.4103652536869049,
+                                "y": 0.32948052883148193,
+                                "z": -0.022441809996962547
+                            },
+                            {
+                                "x": 0.4173629581928253,
+                                "y": 0.29039111733436584,
+                                "z": -0.029854292050004005
+                            },
+                            {
+                                "x": 0.363431453704834,
+                                "y": 0.4678651690483093,
+                                "z": -0.006553268525749445
+                            },
+                            {
+                                "x": 0.36896011233329773,
+                                "y": 0.40657851099967957,
+                                "z": -0.01745370775461197
+                            },
+                            {
+                                "x": 0.37550273537635803,
+                                "y": 0.36938217282295227,
+                                "z": -0.02344500459730625
+                            },
+                            {
+                                "x": 0.3844633996486664,
+                                "y": 0.3344074487686157,
+                                "z": -0.02745777554810047
+                            }
+                        ]
+                    ],
+                    "multiHandedness": [
+                        {
+                            "index": 0,
+                            "score": 0.98046875,
+                            "label": "Left"
+                        }
+                    ]
+                }
+
+                const differ = (a, b) => {
+                    const abx = a.x - b.x;
+                    const aby = a.y - b.y;
+                    const abz = a.z - b.z;
+                    return Math.sqrt(abx * abx + aby * aby + abz * abz);
+                }
+                
+                drawConnectors(
+                    canvas, matchData.multiHandLandmarks[0], HAND_CONNECTIONS,
+                    { color: '#eeeeee', lineWidth: 1 }
+                )
+                drawLandmarks(
+                    canvas, matchData.multiHandLandmarks[0],
+                    { color: '#aeae00', lineWidth: 2 }
+                );
+
+                if (!sData.stT) {
+                    let diff;
+
+
+                    if (results.multiHandedness.length === 0) {
+                        // continue
+                        return sData;
+                    } else if (results.multiHandedness.length === 1) {
+                        let useable;
+                        if (results.multiHandedness[0].index === matchData.multiHandedness[0].index) {
+                            diff = matchData.multiHandLandmarks[0].reduce((acc, v, i) => {
+                                return acc + differ(v, matchData.multiHandLandmarks[0][i]);
+                            }, 0);
+                            if (reportNext) {
+                                console.log(matchData.multiHandLandmarks[0]);
+                                reportNext = false;
+                            }
+
+                            if (diff < 1.5) {
+                                // good
+                                startTimer();
+                                return { stT: true };
+                            }
+                        }
+                    } else {
+                        return sData;
+                    }
+
+
+                    return sData;
+                } else {
+                    let totalDiff;
+                    if (results.multiHandLandmarks.length === 0) {
+                        return sData;
+                    }
+                    else if (results.multiHandLandmarks.length === 1) {
+                        totalDiff = [[4, 8], [8, 12], [12, 16], [16, 20]].reduce((acc, [a, b]) => {
+                            return acc + differ(results.multiHandLandmarks[0][a], results.multiHandLandmarks[0][b]);
+                        }, 0);
+
+                        if (totalDiff > 0.45) {
+                            tickTimer();
+                            return sData;
+                        }
+                    } else {
+                        return sData;
+                    }
+                }
+
+                return sData;
+            }
+        },
+        {
+            name: "Exercise 1 - 2",
+            setup: () => {
+                return { stT: false };
+            },
+            onData: (sData, results, canvas, startTimer, tickTimer) => {
+                const matchData = {
+                    "multiHandLandmarks": [
+                        [
+                            {
+                                "x": 0.6980484127998352,
+                                "y": 0.6542544364929199,
+                                "z": 2.422156626380456e-7
+                            },
+                            {
+                                "x": 0.6436998248100281,
+                                "y": 0.631500244140625,
+                                "z": -0.017498519271612167
+                            },
+                            {
+                                "x": 0.6092789173126221,
+                                "y": 0.5696727633476257,
+                                "z": -0.02201741375029087
+                            },
+                            {
+                                "x": 0.6023346185684204,
+                                "y": 0.5063103437423706,
+                                "z": -0.02544431947171688
+                            },
+                            {
+                                "x": 0.6041932702064514,
+                                "y": 0.4566510021686554,
+                                "z": -0.02787688933312893
+                            },
+                            {
+                                "x": 0.6394553780555725,
+                                "y": 0.47357648611068726,
+                                "z": 0.0008983416482806206
+                            },
+                            {
+                                "x": 0.6348626017570496,
+                                "y": 0.4035511016845703,
+                                "z": -0.008039020001888275
+                            },
+                            {
+                                "x": 0.6345711946487427,
+                                "y": 0.36111873388290405,
+                                "z": -0.018998898565769196
+                            },
+                            {
+                                "x": 0.6364936232566833,
+                                "y": 0.32334524393081665,
+                                "z": -0.027930157259106636
+                            },
+                            {
+                                "x": 0.6715337038040161,
+                                "y": 0.4649263620376587,
+                                "z": -0.0006086971843615174
+                            },
+                            {
+                                "x": 0.6660349369049072,
+                                "y": 0.38587015867233276,
+                                "z": -0.006307811941951513
+                            },
+                            {
+                                "x": 0.6634282469749451,
+                                "y": 0.3381105959415436,
+                                "z": -0.015483214519917965
+                            },
+                            {
+                                "x": 0.661156952381134,
+                                "y": 0.2979125380516052,
+                                "z": -0.023437893018126488
+                            },
+                            {
+                                "x": 0.6999814510345459,
+                                "y": 0.47132250666618347,
+                                "z": -0.0061480081640183926
+                            },
+                            {
+                                "x": 0.6968104243278503,
+                                "y": 0.398440420627594,
+                                "z": -0.013601081445813179
+                            },
+                            {
+                                "x": 0.6925479769706726,
+                                "y": 0.3535233736038208,
+                                "z": -0.02011752501130104
+                            },
+                            {
+                                "x": 0.688061535358429,
+                                "y": 0.3147728741168976,
+                                "z": -0.026083536446094513
+                            },
+                            {
+                                "x": 0.73040771484375,
+                                "y": 0.4884698987007141,
+                                "z": -0.014222540892660618
+                            },
+                            {
+                                "x": 0.7263481020927429,
+                                "y": 0.4311313331127167,
+                                "z": -0.021715564653277397
+                            },
+                            {
+                                "x": 0.7216776609420776,
+                                "y": 0.39575400948524475,
+                                "z": -0.024663057178258896
+                            },
+                            {
+                                "x": 0.716163694858551,
+                                "y": 0.3624591827392578,
+                                "z": -0.02750401385128498
+                            }
+                        ],
+                    ],
+                    "multiHandedness": [
+                        {
+                            "index": 1,
+                            "score": 0.9686279296875,
+                            "label": "Right"
+                        },
+                    ]
+                }
+
+                const differ = (a, b) => {
+                    const abx = a.x - b.x;
+                    const aby = a.y - b.y;
+                    const abz = a.z - b.z;
+                    return Math.sqrt(abx * abx + aby * aby + abz * abz);
+                }
+                
+                drawConnectors(
+                    canvas, matchData.multiHandLandmarks[0], HAND_CONNECTIONS,
+                    { color: '#eeeeee', lineWidth: 1 }
+                )
+                drawLandmarks(
+                    canvas, matchData.multiHandLandmarks[0],
+                    { color: '#aeae00', lineWidth: 2 }
+                );
+
+                if (!sData.stT) {
+                    let diff;
+
+
+                    if (results.multiHandedness.length === 0) {
+                        // continue
+                        return sData;
+                    } else if (results.multiHandedness.length === 1) {
+                        let useable;
+                        if (results.multiHandedness[0].index === matchData.multiHandedness[0].index) {
+                            diff = matchData.multiHandLandmarks[0].reduce((acc, v, i) => {
+                                return acc + differ(v, matchData.multiHandLandmarks[0][i]);
+                            }, 0);
+                            if (reportNext) {
+                                console.log(matchData.multiHandLandmarks[0]);
+                                reportNext = false;
+                            }
+
+                            if (diff < 1.5) {
+                                // good
+                                startTimer();
+                                return { stT: true };
+                            }
+                        }
+                    } else {
+                        return sData;
+                    }
+
+
+                    return sData;
+                } else {
+                    let totalDiff;
+                    if (results.multiHandLandmarks.length === 0) {
+                        return sData;
+                    }
+                    else if (results.multiHandLandmarks.length === 1) {
+                        totalDiff = [[4, 8], [8, 12], [12, 16], [16, 20]].reduce((acc, [a, b]) => {
+                            return acc + differ(results.multiHandLandmarks[0][a], results.multiHandLandmarks[0][b]);
+                        }, 0);
+
+                        if (totalDiff > 0.45) {
+                            tickTimer();
+                            return sData;
+                        }
+                    } else {
+                        return sData;
+                    }
+                }
+
+                return sData;
+            }
+        },
+    ];
+
+    window.loadExercises = (exer) => {
+        if (exer.length === 0) {
+            // DO SOMETHING
+            return;
+        }
+
+        const exprList = document.querySelector('.exer-list-holder');
+        if (exprList !== null) {
+            exprList.innerHTML = "";
+
+            setTimeout(() => {
+                const tt = document.querySelector("#exer-temp");
+                exer.forEach((e, i) => {
+                    const q = tt.content.cloneNode(true);
+                    q.querySelector('#name').textContent = e.name;
+                    setTimeout(() => exprList.appendChild(q), 0);
+                });
+
+                const exercise = exer[0];
+                const data = exercise.setup();
+
+                window.exercise = exercise;
+                window.exydata = data;
+                window.elapsedTime = -1;
+                window.lastTime = Date.now();
+            }, 0)
+        }
+    }
+
+    window.loadExercises(window.exercises);
+
     navigator.mediaDevices.getUserMedia({ video: true })
-        .then( (stream)  => {
+        .then((stream) => {
             videoElement.srcObject = stream;
             // videoElement.play();
             const { width: vWidth, height: vHeight } = stream.getTracks()[0].getSettings();
@@ -554,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const createHands = () => {
                 hands = new Hands({
                     locateFile: (file) => {
-                        return `/libs/mediapipe/hands/${file}`;
+                        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
                     }
                 });
                 hands.setOptions({
@@ -569,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const redoCamera = (ev) => {
                 const width = ev.target.clientWidth;
                 const height = ev.target.clientHeight;
-                
+
                 if ((lastW === width) && (lastH === height)) {
                     return;
                 }
@@ -579,13 +543,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                console.log(lastW, width, lastH, height);
-
-
                 lastW = width;
                 lastH = height;
 
-                const [ aWidth, aHeight ] = calcWAspect(vWidth, vHeight, width, height);
+                const [aWidth, aHeight] = calcWAspect(vWidth, vHeight, width, height);
                 console.log(`Canvas will be ${aWidth} x ${aHeight}`);
 
                 if (window.camera !== null) {
@@ -598,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 canvasElement.style.width = `${aWidth}px`;
                 canvasElement.style.height = `${aHeight}px`;
 
-                setTimeout( () => {
+                setTimeout(() => {
                     if (hands === null) {
                         createHands();
                     }
@@ -614,11 +575,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     newCamera.start();
 
                     if (document.body.classList.contains('still-loading')) {
-                        setTimeout( () => {
+                        setTimeout(() => {
                             console.log('Stopping loading');
                             document.body.classList.remove('still-loading');
                             document.body.classList.add('fade-loading');
-                            setTimeout( () => {
+                            setTimeout(() => {
                                 document.body.classList.remove('fade-loading');
                             }, 200);
                         }, 0);
@@ -629,39 +590,6 @@ document.addEventListener('DOMContentLoaded', () => {
             videoElement.addEventListener('resize', redoCamera);
 
             redoCamera({ target: videoElement });
-
-
-            // const width = videoElement.clientWidth;
-            // const height = videoElement.clientHeight;
-
-            // const [ aWidth, aHeight ] = calcWAspect(vWidth, vHeight, width, height);
-
-            // canvasElement.width = aWidth;
-            // canvasElement.height = aHeight;
-
-            // console.log(aWidth, aHeight);
-
-            
-            // setTimeout( () => {
-                // const camera = new Camera(videoElement, {
-                //     onFrame: async () => {
-                //         await hands.send({ image: videoElement });
-                //     },
-                //     width: vWidth, height: vHeight
-                // });
-
-                // camera.start();
-                // window.camera = camera;
-
-                // setTimeout( () => {
-                //     console.log('Stopping loading');
-                //     document.body.classList.remove('still-loading');
-                //     document.body.classList.add('fade-loading');
-                //     setTimeout( () => {
-                //         document.body.classList.remove('fade-loading');
-                //     }, 200);
-                // }, 0);
-            // }, 0);
         });
 });
 
@@ -670,4 +598,3 @@ document.addEventListener('keydown', (ev) => {
         reportNext = true;
     }
 });
-
